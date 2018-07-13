@@ -22,15 +22,3 @@ exports.read_a_service = function(req, res) {
     res.json(service);
   });
 };
-
-exports.update_a_service = function(req, res) {
-  Service.findOneAndUpdate(
-    { _id: req.params.serviceId },
-    req.body,
-    { new: true },
-    function(err, service) {
-      if (err) res.send(err);
-      res.json(service);
-    }
-  );
-};

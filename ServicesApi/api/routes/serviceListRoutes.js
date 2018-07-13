@@ -3,12 +3,9 @@ module.exports = function(app) {
 
   // todoList Routes
   app
-    .route('/services')
+    .route('/api/services')
     .get(serviceList.list_all_services)
     .post(serviceList.create_a_service);
 
-  app
-    .route('/services/:serviceId')
-    .get(serviceList.read_a_service)
-    .put(serviceList.update_a_service);
+  app.route('/api/services/:serviceId').get(serviceList.read_a_service);
 };
